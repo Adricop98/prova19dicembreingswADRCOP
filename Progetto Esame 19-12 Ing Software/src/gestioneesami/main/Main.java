@@ -2,6 +2,7 @@ package gestioneesami.main;
 
 import gestioneesami.control.*;
 import java.time.LocalDate;
+import java.util.Scanner;
 
 import gestioneesami.control.Gestore_Appelli;
 import gestioneesami.entity.*;
@@ -36,6 +37,7 @@ public class Main {
 		
 		gestore.aggiungi_appello(c2, datez, luoghiz, tipoz);
 		gestore.aggiungi_appello(c3, datet, luoghit, tipot);
+		Scanner s=new Scanner(System.in);
 		
 		gestore.stampa_appelli();
 		

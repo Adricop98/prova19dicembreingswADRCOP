@@ -12,10 +12,14 @@ public class Gestore_Appelli {
 	public  ArrayList<Corso> lista_corsi=new ArrayList<Corso>();
 	
 
-	public  Corso aggiungi_corso(int num_cred,String nom_corso,Docente doc_corso) {				//crea un corso e vi assegna 
-		Corso nuovo_corso=new Corso(num_cred,nom_corso);												//un docente preesistente nel sistema
-		nuovo_corso.setDocente_corso(doc_corso);
-		lista_corsi.add(nuovo_corso);
+	public  Corso aggiungi_corso(int num_cred,String nom_corso,Docente doc_corso) {						 
+		Corso nuovo_corso=new Corso(num_cred,nom_corso);												//crea un corso e vi assegna
+		if(!lista_corsi.contains(nuovo_corso)) {																			//un docente preesistente nel sistema
+			nuovo_corso.setDocente_corso(doc_corso);
+			doc_corso.getCorsi().add(nuovo_corso);
+			lista_corsi.add(nuovo_corso);
+		}else
+		System.out.println("Corso dallo stesso nome già presente");
 		return nuovo_corso;
 	}
 	
